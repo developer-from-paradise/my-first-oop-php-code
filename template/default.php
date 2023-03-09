@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doodle - Search Engine</title>
     <link rel="stylesheet" href="template/css/style.css">
+    <link rel="stylesheet" href="template/css/responsive.css">
 </head>
 <body>
 
@@ -66,7 +67,7 @@ function ShowResult(result){
 $('.btn-search').click(function(e) {
     var search = document.querySelector('.input-search').value;
     var content = document.querySelector('#content');
-    
+    $('#content > div').remove();
     e.preventDefault();
     $.ajax({
         type: 'POST',
