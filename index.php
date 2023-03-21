@@ -46,7 +46,7 @@ if (!isset($_SESSION['isLogged'])){
 
             if ($db->register($google_data['aud'], $google_data['email'])){ // Checking is registering was successfull
                 $_SESSION['isLogged'] = 'true'; // Adding session
-                require_once('/template/default.php'); // Showing main php content
+                require_once('template/default.php'); // Showing main php content
             } else {
                 echo "Error 500";
             }
@@ -59,5 +59,5 @@ if (!isset($_SESSION['isLogged'])){
     }
 
 } else {
-    require_once('/template/default.php');
+    require_once('template/default.php');
 }

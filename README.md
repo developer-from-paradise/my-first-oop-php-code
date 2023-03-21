@@ -18,7 +18,7 @@ db_host, db_user.. = <your db creditions>
 
 4. Import sql file into your mysql database
 5. Run the server apache2.
-6. Navigate to `http://localhost/<projectfolder>/` in your browser.
+6. Navigate to `http://localhost/` in your browser.
 7. Login using Google account".
 8. Make a query into search input
 
