@@ -9,10 +9,10 @@ This website allows users to retrieve data from Google and generate chat respons
 3. Get your Google API credentials, ChatGPT token, rapid api token and SQL datas. The following variables must be filled in config file:
 
 ```
-client_id=<	your google client id>
-client_secret=<your google client_secret here>
-apiGPT=<your openAi token here>
-apiGoogle=<here is your rapidapi key>
+client_id          = <your google client id>
+client_secret      = <your google client_secret here>
+apiGPT             = <your openAi token here>
+apiGoogle          = <here is your rapidapi key>
 db_host, db_user.. = <your db creditions>
 ```
 
@@ -34,4 +34,4 @@ This website uses the following dependencies:
 ## Demo version
 
 I installed this project into a hosting here is a link
-`[Demo link](http://f0792778.xsph.ru/doodle/)`
+[Demo link](http://f0792778.xsph.ru/doodle/)
