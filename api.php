@@ -1,12 +1,21 @@
 <?php
-include('module.php');
-header('Content-Type: application/json; charset=utf-8');
-$query = $_POST['requests'];
-$api = new webSearchAPI();
-$api::$pagesize = "20";
-$api::$autocorrect = "true";
+require_once('module.php');
+require_once('config.php');
 
-$data = $api->get_data($query);
-echo json_encode($data);
+header('Content-Type: application/json; charset=utf-8');
+
+$query = $_POST['requests'];
+$module = new webSearchAPI();
+$module::$pagesize = "20";
+$module::$autocorrect = "true";
+
+$GoogleData = $module->useGoogle($apiGoogle, $query);
+$GPTData = $module->useChatGPT($apiGPT, $query);
+
+$jsonmerge = (object) array_merge((array) json_decode($GPTData), (array) json_decode($GoogleData));
+$data = json_encode($jsonmerge);
+
+echo $data;
+
 
 ?>

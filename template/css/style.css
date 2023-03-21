@@ -130,6 +130,72 @@ body {
     color: #000;
 }
 
+
+
+
+.chatGPT {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    box-shadow: 4px 6px 16px black;
+    box-sizing: border-box;
+}
+
+.chatGPT-title {
+    font-size: 47px;
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    color: #000;
+}
+
+.google-title {
+    font-size: 47px;
+    font-family: 'Kanit', sans-serif;
+    color: #000;
+    text-align: center;
+    margin: 16px 0px;
+}
+
+.chatGPT-text {
+    font-family: 'Sono', sans-serif;
+    font-weight: bold;
+}
+
+.telegram-auth-btn {
+    background-color: #0088cc;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/512px-Telegram_logo.svg.png');
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding-left: 30px;
+    margin-top: 20px;
+    transition: 0.2s all;
+}
+
+
+.telegram-auth-btn:hover {
+    background-color: #006699;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
 .modal {
     display:    none;
     position:   fixed;

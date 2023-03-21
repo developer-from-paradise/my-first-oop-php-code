@@ -1,7 +1,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
-$("input[type='']").keypress(function(event){
+$("input[type='text']").keypress(function(event){
     var ew = event.which;
     if(ew == 32)
         return true;
@@ -30,11 +30,10 @@ function createElementFromHTML(htmlString) {
 }
 
 function ShowResult(result){
-    var data = JSON.parse(result, content);
+    var gpt = document.querySelector('.chatGPT-text');
+
     
-    
-    
-    data['value'].forEach(item => {
+    result.value.forEach(item => {
         if(item['image']['url'] == ""){
             item['image']['url'] = "https://styleguide.iu.edu/images/3-2_placeholder_768px-512px.png";
         }
@@ -48,6 +47,8 @@ function ShowResult(result){
     div = createElementFromHTML(div);
     content.appendChild(div);
     });
+
+    gpt.textContent = result.choices[0]["message"]['content'];
 }
 
 
