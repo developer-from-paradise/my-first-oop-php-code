@@ -11,7 +11,7 @@ if (!isset($_SESSION['isLogged'])){
         // Making post requests to the google using $_GET['code'] var for getting access_token
         $code = $_GET['code'];
         $token_url = 'https://www.googleapis.com/oauth2/v4/token';
-        $redirect_uri = "http://localhost/session/openAI/index.php";
+        $redirect_uri = 'http://'.$_SERVER['SERVER_NAME'].'/index.php';
         $data = array(
             'code' => $code,
             'client_id' => $client_id,
@@ -46,7 +46,7 @@ if (!isset($_SESSION['isLogged'])){
 
             if ($db->register($google_data['aud'], $google_data['email'])){ // Checking is registering was successfull
                 $_SESSION['isLogged'] = 'true'; // Adding session
-                require_once($_SERVER['DOCUMENT_ROOT'].'/session/openAI/template/default.php'); // Showing main php content
+                require_once('/template/default.php'); // Showing main php content
             } else {
                 echo "Error 500";
             }
@@ -54,10 +54,10 @@ if (!isset($_SESSION['isLogged'])){
             echo "Ошибка access token";
         }
     } else {
-        header('Location: http://localhost/session/openAI/login.php');
+        header('Location: http://'.$_SERVER['SERVER_NAME'].'/login.php');
         // echo "Ошибка code Необходимо авторизоваться!";
     }
 
 } else {
-    require_once($_SERVER['DOCUMENT_ROOT'].'/session/openAI/template/default.php');
+    require_once('/template/default.php');
 }
